@@ -118,6 +118,22 @@ button[disabled] {
   overflow: hidden;
 }
 
+.password-criteria ul {
+  list-style: none;
+  padding: 0;
+  gap: 10px;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  /* background:black; */
+}
+
+.password-criteria ul .criteria {
+  width: 36%;
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
