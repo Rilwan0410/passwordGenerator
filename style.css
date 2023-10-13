@@ -124,15 +124,22 @@ button[disabled] {
   gap: 10px;
   font-family: monospace;
   display: flex;
+  font-weight: 500;
   flex-direction: column;
   /* background:black; */
 }
 
 .password-criteria ul .criteria {
-  width: 36%;
+  width: 35.5%;
   display: flex;
   justify-content: space-between;
 }
+
+input[type="number"] {
+  text-align: center;
+  outline:none;
+}
+
 
 @media (max-width: 690px) {
   .btn {
@@ -149,5 +156,15 @@ button[disabled] {
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
+  }
+
+  .password-criteria ul .criteria {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+
+  .password-criteria ul {
+    justify-content: center;
+    align-items: center;
   }
 }

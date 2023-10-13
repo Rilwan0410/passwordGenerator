@@ -1,13 +1,52 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
+
+const characterArray = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
 
 //  function to generate password
-function generatePassword() {}
+function generatePassword() {
+  const pw = [];
+  for (let i = 0; i < 20; i++) {
+    pw.push(characterArray[Math.floor(characterArray.length * Math.random())]);
+  }
+  return pw.join("");
+}
+
+
+
+console.log(generatePassword());
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
