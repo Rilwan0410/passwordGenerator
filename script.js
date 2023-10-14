@@ -72,7 +72,7 @@ function generatePassword(num) {
   }
   return pw.join("");
 }
-
+//  function to add numeric characters
 function addNumeric(word) {
   word = word.split("");
 
@@ -83,6 +83,8 @@ function addNumeric(word) {
 
   return word.join("");
 }
+
+//  function to add special characters
 function addSpecial(word) {
   word = word.split("");
 
@@ -98,6 +100,8 @@ function addSpecial(word) {
 
   return word.join("");
 }
+
+//  function to add uppercase characters
 function addUppercase(word) {
   word = word.split("");
 
@@ -108,6 +112,8 @@ function addUppercase(word) {
 
   return word.join("");
 }
+ 
+//  function to add negate having lowercase characters
 function negateLowercase(word) {
   word = word.split("");
 
