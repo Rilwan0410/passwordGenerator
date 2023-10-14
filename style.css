@@ -136,10 +136,6 @@ button[disabled] {
   justify-content: space-between;
 }
 
-/* .password-criteria ul .criteria:first-child{
-  width:45%;
-} */
-
 input[type="number"] {
   text-align: center;
   outline: none;
@@ -150,7 +146,9 @@ input[type="number"] {
   padding-left: 0;
 }
 
-
+.hidden{
+  display:none
+}
 
 @media (max-width: 690px) {
   .btn {

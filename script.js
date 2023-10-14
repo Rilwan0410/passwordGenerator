@@ -7,6 +7,18 @@ const hasSpecialCharacters = document.getElementById("password-special");
 const hasUppercase = document.getElementById("password-uppercase");
 const hasLowercase = document.getElementById("password-lowercase");
 const hasNumeric = document.getElementById("password-numbers");
+const criteriaList = document.querySelector(".password-criteria");
+
+//Showing criteria list
+let showCriteria = false;
+
+function showListCriteria() {
+  showCriteria = true;
+
+  if (showCriteria) {
+    criteriaList.classList.remove("hidden");
+  }
+}
 
 const characterArray = [
   "a",
@@ -66,7 +78,7 @@ function generatePassword(num) {
 function addNumeric(word) {
   word = word.split("");
 
-  for (i = 0; i < word.length; i++) {
+  for (i = 0; i < word.length; i += 3) {
     word[Math.floor(Math.random() * i + 1)] =
       numericArray[Math.floor(Math.random() * numericArray.length)];
   }
@@ -82,8 +94,8 @@ function addSpecial(word) {
       specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
     console.log(word.join(""));
   } else {
-    for (i = 0; i < word.length; i++) {
-      word[Math.floor(Math.random() * i + 1)] =
+    for (i = 0; i < word.length; i += 5) {
+      word[Math.floor(Math.random() * i + 4)] =
         specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
     }
   }
@@ -121,33 +133,36 @@ function writePassword() {
   let password = generatePassword(pwLength.value);
   let passwordText = document.querySelector("#password");
 
-  if (!pwLength.value) {
-    alert("Please enter a value");
-    return;
+  if (showCriteria) {
+    if (!pwLength.value) {
+      alert("Please enter a value");
+      return;
+    }
+
+    if (pwLength.value > 128) {
+      alert("Password cannot exceed 128 characters");
+      return;
+    }
+
+    if (pwLength.value < 8) {
+      alert("Password cannot be less than 8 characters");
+      return;
+    }
+
+    if (hasUppercase.checked) {
+      password = addUppercase(password);
+    }
+
+    if (hasNumeric.checked) {
+      password = addNumeric(password);
+    }
+
+    if (hasSpecialCharacters.checked) {
+      password = addSpecial(password);
+    }
   }
 
-  if (pwLength.value > 128) {
-    alert("Password cannot exceed 128 characters");
-    return;
-  }
-
-  if (pwLength.value < 8) {
-    alert("Password cannot be less than 8 characters");
-    return;
-  }
-
-  if (hasUppercase.checked) {
-    password = addUppercase(password);
-  }
-  if (hasSpecialCharacters.checked) {
-    password = addSpecial(password);
-  }
-
-  if (hasNumeric.checked) {
-    password = addNumeric(password);
-  }
-
-
+  showListCriteria();
   passwordText.value = password;
 }
 
