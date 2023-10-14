@@ -114,19 +114,20 @@ function addUppercase(word) {
   console.log(word.join(""));
   return word.join("");
 }
-function addLowercase(word) {
+function negateLowercase(word) {
   word = word.split("");
 
   for (i = 0; i < word.length; i++) {
-    word[Math.floor(Math.random() * i)] =
-      numericArray[Math.floor(Math.random() * numericArray.length)];
+    if (isNaN(word[i])) {
+      word[i] = word[i].toUpperCase();
+    }
   }
 
   console.log(word.join(""));
   return word.join("");
 }
 
-addSpecial(generatePassword(20));
+negateLowercase(generatePassword(20));
 
 // Write password to the #password input
 function writePassword() {
@@ -159,6 +160,10 @@ function writePassword() {
 
     if (hasSpecialCharacters.checked) {
       password = addSpecial(password);
+    }
+
+    if (!hasLowercase.checked) {
+      password = negateLowercase(password)
     }
   }
 
