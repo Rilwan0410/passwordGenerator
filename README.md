@@ -42,5 +42,5 @@ Once you have entered a value for the length of your password (between 8 and 128
 
 ## Links 
 
-Link to Deployed Website On Git Hub pages : https://rilwan0410.github.io/passwordGenerator/
+Link to Deployed Website On Git Hub pages : https://rilwan0410.github.io/passwordGenerator/  
 Link to Git Hub Repository : https://github.com/Rilwan0410/passwordGenerator
