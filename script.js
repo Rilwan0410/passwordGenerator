@@ -37,6 +37,19 @@ const characterArray = [
   "z",
 ];
 const numericArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const specialCharacters = [
+  "!",
+  "*",
+  "&",
+  "$",
+  "%",
+  "#",
+  "@",
+  "?",
+  "~",
+  "-",
+  "_",
+];
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 console.log(hasUppercase.checked);
@@ -52,15 +65,56 @@ function generatePassword(num) {
 
 function addNumeric(word) {
   word = word.split("");
-  word[Math.floor(Math.random() * word.length)] =
-    numericArray[Math.floor(Math.random() * numericArray.length)];
 
+  for (i = 0; i < word.length; i++) {
+    word[Math.floor(Math.random() * i + 1)] =
+      numericArray[Math.floor(Math.random() * numericArray.length)];
+  }
+
+  console.log(word.join(""));
+  return word.join("");
+}
+function addSpecial(word) {
+  word = word.split("");
+
+  if (word.length < 15) {
+    word[Math.floor(Math.random() * word.length)] =
+      specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+    console.log(word.join(""));
+  } else {
+    for (i = 0; i < word.length; i++) {
+      word[Math.floor(Math.random() * i + 1)] =
+        specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+    }
+  }
+
+  console.log(word.join(""));
+  return word.join("");
+}
+function addUppercase(word) {
+  word = word.split("");
+
+  for (i = 0; i < word.length; i++) {
+    word[Math.floor(Math.random() * i)] =
+      word[Math.floor(Math.random() * i)].toUpperCase();
+  }
+
+  console.log(word.join(""));
+  return word.join("");
+}
+function addLowercase(word) {
+  word = word.split("");
+
+  for (i = 0; i < word.length; i++) {
+    word[Math.floor(Math.random() * i)] =
+      numericArray[Math.floor(Math.random() * numericArray.length)];
+  }
+
+  console.log(word.join(""));
   return word.join("");
 }
 
-addNumeric(generatePassword(10));
-
-console.log(generatePassword());
+addSpecial(generatePassword(20));
 
 // Write password to the #password input
 function writePassword() {
@@ -82,9 +136,17 @@ function writePassword() {
     return;
   }
 
+  if (hasUppercase.checked) {
+    password = addUppercase(password);
+  }
+  if (hasSpecialCharacters.checked) {
+    password = addSpecial(password);
+  }
+
   if (hasNumeric.checked) {
     password = addNumeric(password);
   }
+
 
   passwordText.value = password;
 }
