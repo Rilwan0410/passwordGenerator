@@ -11,7 +11,7 @@ This is what the initial website will look like.
 ![](/img/base-website-img.png)
 
 
-After you have clicked the option to generate a password the first time, you will be given the following prompt to add the given criteria, by default lowercase is already checked, however you can also omit the default and choose not to include any lowercases in your password.
+After you have clicked the option to generate a password the first time, you will be given the following prompt to add the given criteria. By default, lowercase is already checked, however you can omit the default and choose not to include any lowercases in your password.
 
 ![](/img/after-clicked-generate-password-img.png)
 
