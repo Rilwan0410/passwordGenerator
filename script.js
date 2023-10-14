@@ -167,9 +167,10 @@ function writePassword() {
     }
   }
 
-  // if (!hasLowercase.checked && !hasUppercase.checked && !hasSpecialCharacters.checked && !hasNumeric.checked) {
-  //   alert("Please select a filter");
-  // }
+  if (!hasLowercase.checked && !hasUppercase.checked && !hasSpecialCharacters.checked && !hasNumeric.checked) {
+    alert("Please select a filter");
+    return
+  }
 
   showListCriteria();
   passwordText.value = password;
