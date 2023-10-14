@@ -163,9 +163,13 @@ function writePassword() {
     }
 
     if (!hasLowercase.checked) {
-      password = negateLowercase(password)
+      password = negateLowercase(password);
     }
   }
+
+  // if (!hasLowercase.checked && !hasUppercase.checked && !hasSpecialCharacters.checked && !hasNumeric.checked) {
+  //   alert("Please select a filter");
+  // }
 
   showListCriteria();
   passwordText.value = password;
