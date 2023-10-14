@@ -11,7 +11,6 @@ const criteriaList = document.querySelector(".password-criteria");
 
 //Showing criteria list
 let showCriteria = false;
-
 function showListCriteria() {
   showCriteria = true;
 
@@ -48,7 +47,6 @@ const characterArray = [
   "y",
   "z",
 ];
-const numericArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const specialCharacters = [
   "!",
   "*",
@@ -62,9 +60,9 @@ const specialCharacters = [
   "-",
   "_",
 ];
+const numericArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 //--------------------------------------------------------------------------------------------------------------------------------------
-console.log(hasUppercase.checked);
 
 //  function to generate password
 function generatePassword(num) {
@@ -83,7 +81,6 @@ function addNumeric(word) {
       numericArray[Math.floor(Math.random() * numericArray.length)];
   }
 
-  console.log(word.join(""));
   return word.join("");
 }
 function addSpecial(word) {
@@ -92,7 +89,6 @@ function addSpecial(word) {
   if (word.length < 15) {
     word[Math.floor(Math.random() * word.length)] =
       specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-    console.log(word.join(""));
   } else {
     for (i = 0; i < word.length; i += 5) {
       word[Math.floor(Math.random() * i + 4)] =
@@ -100,7 +96,6 @@ function addSpecial(word) {
     }
   }
 
-  console.log(word.join(""));
   return word.join("");
 }
 function addUppercase(word) {
@@ -111,7 +106,6 @@ function addUppercase(word) {
       word[Math.floor(Math.random() * i)].toUpperCase();
   }
 
-  console.log(word.join(""));
   return word.join("");
 }
 function negateLowercase(word) {
@@ -123,7 +117,6 @@ function negateLowercase(word) {
     }
   }
 
-  console.log(word.join(""));
   return word.join("");
 }
 
@@ -167,9 +160,14 @@ function writePassword() {
     }
   }
 
-  if (!hasLowercase.checked && !hasUppercase.checked && !hasSpecialCharacters.checked && !hasNumeric.checked) {
+  if (
+    !hasLowercase.checked &&
+    !hasUppercase.checked &&
+    !hasSpecialCharacters.checked &&
+    !hasNumeric.checked
+  ) {
     alert("Please select a filter");
-    return
+    return;
   }
 
   showListCriteria();
