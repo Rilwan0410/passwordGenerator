@@ -126,7 +126,7 @@ function negateLowercase(word) {
   return word.join("");
 }
 
-negateLowercase(generatePassword(20));
+// -------------------------------------------------------------------------------------------------------------------------------------
 
 // Write password to the #password input
 function writePassword() {
