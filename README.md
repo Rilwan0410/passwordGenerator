@@ -11,9 +11,16 @@ This is what the initial website will look like.
 ![](/img/base-website-img.png)
 
 
+
+
+
+
 After you have clicked the option to generate a password the first time, you will be given the following prompt to select the given criteria. By default, lowercase is already checked, however you can omit the default and choose not to include any lowercases in your password.
 
 ![](/img/after-clicked-generate-password-img.png)
+
+
+
 
 
 
@@ -22,9 +29,15 @@ If you do not enter a value for the length you want your password to be, you wil
 ![](/img/enter-a-value-error-img.png)
 
 
-Once you have enter a value for the length of your password (between 8 and 128 characters), and click the "Generate Password" button, you will given a randomly generator password based on the criteria you have/haven't specified.
+
+
+
+
+Once you have entered a value for the length of your password (between 8 and 128 characters), and clicked the "Generate Password" button, you will given a randomly generator password based on the criteria you have/haven't specified.
 
 ![](/img/password-generated-img.png)
+
+
 
 
 ## Links 
